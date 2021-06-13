@@ -25,9 +25,8 @@
 ## Установка
 Требуется Python версия 3 и выше, установщик пакетов python - pip
 ```
-cd questionnaire
+cd survey
 pip install -r requirements.txt
-python manage.py makemigrations survey
 python manage.py migrate
 python manage.py createsuperuser
 ```
@@ -40,7 +39,7 @@ python manage.py runserver
 
 ## Запуск тестов
 ```
-cd questionnaire/tests
+cd survey/tests
 pytest
 ```
 

@@ -5,7 +5,7 @@
 ## Для администратора
 Все вызовы для администратора требуют базовую HTTP-авторизацию.
 
-#### GET /api/survey/
+#### GET /survey/
 Получение списка всех опросов. Тело ответа:
 ```
 [
@@ -20,7 +20,7 @@
 ]
 ```
 
-#### POST /api/survey/
+#### POST /survey/
 Создание нового опроса. 
 Тело запроса:
 ```
@@ -45,7 +45,7 @@
 }
 ```
 
-#### GET /api/survey/(survey_id)
+#### GET /survey/(survey_id)
 Где survey_id - ID ранее созданного опроса
 Получение информации о ранне созданном опросе. Тело ответа:
 ```
@@ -58,7 +58,7 @@
 }
 ```
 
-#### PATCH /api/survey/(survey_id)
+#### PATCH /survey/(survey_id)
 Где survey_id - ID ранее созданного опроса
 Редактирование опроса. Поля опциональные
 Тело запроса:
@@ -83,11 +83,11 @@
 }
 ```
 
-#### DELETE /api/survey/(survey_id)
+#### DELETE /survey/(survey_id)
 Где survey_id - ID ранее созданного опроса
 Удаление опроса.
 
-#### POST /api/survey/(survey_id)/questions/
+#### POST /survey/(survey_id)/questions/
 Где survey_id - ID ранее созданного опроса
 Создание вопросов с ответами в указанном опросе.
 Тело запроса:
@@ -130,7 +130,7 @@
 ]
 ```
 
-#### GET /api/survey/(survey_id)/questions/
+#### GET /survey/(survey_id)/questions/
 Где survey_id - ID ранее созданного опроса
 Получение информации о вопросах в опросе и вариантов ответов на них.
 Тело ответа:
@@ -156,7 +156,7 @@
 ]
 ```
 
-#### GET /api/survey/(survey_id)/questions/(question_id)
+#### GET /survey/(survey_id)/questions/(question_id)
 survey_id - ID ранее созданного опроса
 question_id - ID ранее созданного вопроса
 Получение информации о вопросе, по указанному ID опроса и ID вопроса, с вариантами ответов.
@@ -180,12 +180,12 @@ question_id - ID ранее созданного вопроса
 }
 ```
 
-#### DELETE /api/survey/(survey_id)/questions/(question_id)
+#### DELETE /survey/(survey_id)/questions/(question_id)
 survey_id - ID ранее созданного опроса
 question_id - ID ранее созданного вопроса
 Удаление вопроса из опроса.
 
-#### PATCH /api/survey/(survey_id)/questions/(question_id)
+#### PATCH /survey/(survey_id)/questions/(question_id)
 survey_id - ID ранее созданного опроса
 question_id - ID ранее созданного вопроса
 Изменение существующего вопроса. Тело запроса (все поля опциональные):
@@ -225,7 +225,7 @@ question_id - ID ранее созданного вопроса
 ----
 ##  Для пользователя
 
-#### GET /api
+#### GET /
 Получить список активных опросов. 
 Тело ответа:
 ```
@@ -241,7 +241,7 @@ question_id - ID ранее созданного вопроса
 ]
 ```
 
-#### GET /api/(survey_id)
+#### GET /(survey_id)
 survey_id - ID активного опроса
 Тело ответа:
 ```
@@ -276,7 +276,7 @@ survey_id - ID активного опроса
 }
 ```
 
-#### GET /api/results/(user_id)
+#### GET /results/(user_id)
 user_id - ID пользователя
 Пройденные опросы с ответами
 ```
@@ -298,7 +298,7 @@ user_id - ID пользователя
     ...
 ]
 ```
-#### GET /api/results/(user_id)/survey/(survey_id)
+#### GET /results/(user_id)/survey/(survey_id)
 user_id - ID пользователя
 survey_id - ID активного опроса
 Результаты опроса с указанным ID с ответами
@@ -321,7 +321,7 @@ survey_id - ID активного опроса
     ...
 ]
 ```
-#### POST /api/results/(user_id)/survey/(survey_id)
+#### POST /results/(user_id)/survey/(survey_id)
 user_id - ID пользователя
 survey_id - ID активного опроса
 Отправить ответы по опросу
